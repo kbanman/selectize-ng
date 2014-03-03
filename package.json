@@ -1,0 +1,46 @@
+{
+  "name": "selectize-ng",
+  "version": "0.1.0",
+  "description": "Selectize directive for AngularJS with two-way bindings for both values and options",
+  "main": "selectize-ng.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbanman/selectize-ng.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "selectize",
+    "angular-selectize",
+    "ng-selectize",
+    "select2",
+    "chosen"
+  ],
+  "author": "Kelly Banman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbanman/selectize-ng/issues"
+  },
+  "homepage": "https://github.com/kbanman/selectize-ng",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "karma-script-launcher": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma-html2js-preprocessor": "latest",
+    "karma-jasmine": "latest",
+    "karma-requirejs": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "karma": "latest",
+    "grunt-karma": "latest",
+    "karma-junit-reporter": "latest",
+    "grunt-ngmin": "0.0.3"
+  }
+}

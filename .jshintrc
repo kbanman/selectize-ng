@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "angular": true,
+    "$": true,
+    "console": true
+  },
+  "indent": 2,
+  "browser" : true,
+  "boss" : false,
+  "curly": true,
+  "debug": false,
+  "devel": false,
+  "eqeqeq": false,
+  "evil": false,
+  "forin": false,
+  "immed": true,
+  "laxbreak": false,
+  "newcap": true,
+  "noarg": true,
+  "noempty": false,
+  "nonew": false,
+  "nomen": false,
+  "onevar": true,
+  "plusplus": false,
+  "undef": true,
+  "sub": true,
+  "strict": false,
+  "unused": true,
+  "validthis": true
+}

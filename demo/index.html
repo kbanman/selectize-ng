@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="selectize-ng-demo">
+  <head>
+    <link rel="stylesheet" href="../lib/selectize/dist/css/selectize.css"/>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="../dist/standalone/selectize-ng.min.js"></script>
+    <script>
+    if (typeof angular === 'undefined') {
+      alert('Before running the demo you need to `bower install` the dependencies');
+    }
+    angular.module('selectize-ng-demo', ['selectize-ng'])
+      .controller('MainCtrl', function($scope) {
+
+        $scope.users = [
+          { id: 1, name: 'Bob' },
+          { id: 2, name: 'Sally' },
+          { id: 3, name: 'Jill' },
+          { id: 4, name: 'Jane' }
+        ];
+
+        function newUsers() {
+          $scope.users.push(
+            { id: 5, name: 'Janet' }
+          );
+        }
+
+        $scope.tagging = {
+          value: [1, 3],
+          options: {
+            valueField: 'id',
+            labelField: 'name',
+            searchField: ['name'],
+            create: true
+          },
+        };
+
+        $scope.single = {
+          value: 2,
+          options: {
+            valueField: 'id',
+            labelField: 'name',
+            searchField: ['name']
+          }
+        };
+        
+        $scope.addUsers = newUsers;
+
+      });
+    </script>
+  </head>
+  
+
+  <body ng-controller="MainCtrl">
+
+    <h3>Tagging (&lt;input /&gt;)</h3>
+    <input type="text" ng-model="tagging.value"/>
+    <input type="text" selectize="tagging.options" placeholder="Choose some users" ng-model="tagging.value" options="users"/>
+
+    <h3>Single (&lt;select /&gt;)</h3>
+    <input type="text" ng-model="single.value"/>
+    <select selectize="single.options" placeholder="Choose a user" ng-model="single.value" options="users"></select>
+
+    <hr />
+
+    <p>
+      <button ng-click="addUsers()">Add Users</button><br />
+      Adds another user to the options list, demonstrating binding options
+    </p>
+    
+  </body>
+</html>
