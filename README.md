@@ -18,7 +18,7 @@ You can get it from [Bower](http://bower.io/)
 
 Load the assets into your application:
 
-	<link rel="stylesheet" href="bower_components/selectize-ng/dist/selectize.css"/>
+	<link rel="stylesheet" href="bower_components/selectize-ng/dist/standalone/selectize.css"/>
 	<script type="text/javascript" src="bower_components/selectize-ng/dist/standalone/selectize-ng.min.js"></script>
 
 Or if you want to use your own copy of selectize.js:
@@ -27,7 +27,7 @@ Or if you want to use your own copy of selectize.js:
 	<script type="text/javascript" src="bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
 	<script type="text/javascript" src="bower_components/selectize-ng/dist/selectize-ng.min.js"></script>
 
-Add the module as a dependency to you angular app:
+Add the module as a dependency to your angular app:
 
 	angular.module('myApp', ['selectize-ng'])
 
