@@ -1,6 +1,6 @@
 
 angular.module('selectize-ng', [])
-  .directive('selectize', function() {
+  .directive('selectize', function($timeout) {
     'use strict';
 
     return {
@@ -101,13 +101,17 @@ angular.module('selectize-ng', [])
         }
         
         function setSelectizeOptions(newOptions) {
-          var values = parseValues(ngModel.$viewValue);
-          selectize.addOption(newOptions);
-          selectize.refreshOptions(false);
-          if (options.mode === 'multi' && newOptions) {
-            restoreInvalidValues(newOptions, values);
-          }
-          setSelectizeValue(values);
+          $timeout(function(){
+            // prevent digest problems
+            var values = parseValues(ngModel.$viewValue);
+            selectize.clearOptions();
+            selectize.addOption(newOptions);
+            selectize.refreshOptions(false);
+            if (options.mode === 'multi' && newOptions) {
+              restoreInvalidValues(newOptions, values);
+            }
+            setSelectizeValue(values);
+          });
         }
 
         scope.$parent.$watch(attrs.ngModel, setSelectizeValue);
